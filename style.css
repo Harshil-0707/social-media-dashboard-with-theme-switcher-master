@@ -1,0 +1,90 @@
+@import url("https://fonts.googleapis.com/css2?family=Inter:wght@100..900&display=swap");
+
+:root {
+  /* Primary color */
+  --Twitter: hsl(203, 89%, 53%);
+  --YouTube: hsl(348, 97%, 39%);
+  --Facebook: hsl(208, 92%, 53%);
+  --Lime-Green: hsl(163, 72%, 41%);
+  --Bright-Red: hsl(356, 69%, 56%);
+  --instagram: linear-gradient(to right, hsl(37, 97%, 70%), hsl(329, 70%, 58%));
+
+  /* Light Theme */
+
+  --White: hsl(0, 0%, 100%);
+  --Very-Dark-Blue: hsl(230, 17%, 14%);
+  --Very-Pale-Blue: hsl(225, 100%, 98%);
+  --Dark-Grayish-Blue: hsl(228, 12%, 44%);
+  --Light-Grayish-Blue: hsl(227, 47%, 96%);
+
+  /* Dark Theme */
+
+  --White: hsl(0, 0%, 100%);
+  --Very-Dark-Blue: hsl(230, 17%, 14%);
+  --Very-Dark-Blue: hsl(232, 19%, 15%);
+  --Desaturated-Blue: hsl(228, 34%, 66%);
+  --Dark-Desaturated-Blue: hsl(228, 28%, 20%);
+
+  /* Dark Theme Toggle */
+  --toggle: linear-gradient(to right, hsl(210, 78%, 56%), hsl(146, 68%, 55%));
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  outline: none;
+  font-family: "Inter";
+  box-sizing: border-box;
+}
+
+/* Header */
+
+header {
+  display: flex;
+  padding: 20px 8em;
+  align-items: center;
+  justify-content: space-between;
+  background-color: var(--Dark-Desaturated-Blue);
+}
+
+h1 {
+  font-size: 29px;
+  margin-bottom: 4px;
+  color: var(--White);
+}
+
+#followers {
+  font-size: 15px;
+  font-weight: 700;
+  color: var(--Desaturated-Blue);
+}
+
+#theme {
+  display: flex;
+  align-items: center;
+}
+
+#themeMode {
+  margin-right: 10px;
+  color: var(--Desaturated-Blue);
+}
+
+#btn {
+  width: 48px;
+  height: 26px;
+  border: none;
+  padding: 3px;
+  border-radius: 100px;
+  background: var(--toggle);
+}
+
+#btn:hover {
+  cursor: pointer;
+}
+
+#innerBtn {
+  width: 48%;
+  height: 100%;
+  border-radius: 100%;
+  background-color: var(--Dark-Desaturated-Blue);
+}
