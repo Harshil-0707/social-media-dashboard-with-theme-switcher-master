@@ -20,10 +20,10 @@
   /* Dark Theme */
 
   --White: hsl(0, 0%, 100%);
-  --Very-Dark-Blue: hsl(230, 17%, 14%);
-  --Very-Dark-Blue: hsl(232, 19%, 15%);
-  --Desaturated-Blue: hsl(228, 34%, 66%);
-  --Dark-Desaturated-Blue: hsl(228, 28%, 20%);
+  --Very-Dark-Blue-BG: hsl(230, 17%, 14%);
+  --Very-Dark-Blue-TBG: hsl(232, 19%, 15%);
+  --Desaturated-Blue-text: hsl(228, 34%, 66%);
+  --Dark-Desaturated-Blue-Card-BG: hsl(228, 28%, 20%);
 
   /* Dark Theme Toggle */
   --toggle: linear-gradient(to right, hsl(210, 78%, 56%), hsl(146, 68%, 55%));
@@ -37,14 +37,22 @@
   box-sizing: border-box;
 }
 
+body {
+  background-color: var(--Very-Dark-Blue-BG);
+}
+
+#container {
+  padding-inline: 10rem;
+}
+
 /* Header */
 
-header {
+#container #header {
   display: flex;
-  padding: 20px 8em;
+  padding: 20px 0;
   align-items: center;
   justify-content: space-between;
-  background-color: var(--Dark-Desaturated-Blue);
+  background-color: var(--Very-Dark-Blue-TBG);
 }
 
 h1 {
@@ -56,7 +64,7 @@ h1 {
 #followers {
   font-size: 15px;
   font-weight: 700;
-  color: var(--Desaturated-Blue);
+  color: var(--Desaturated-Blue-text);
 }
 
 #theme {
@@ -66,7 +74,7 @@ h1 {
 
 #themeMode {
   margin-right: 10px;
-  color: var(--Desaturated-Blue);
+  color: var(--Desaturated-Blue-text);
 }
 
 #btn {
@@ -86,5 +94,76 @@ h1 {
   width: 48%;
   height: 100%;
   border-radius: 100%;
-  background-color: var(--Dark-Desaturated-Blue);
+  background-color: var(--Very-Dark-Blue-TBG);
+}
+
+#socialMediaInfo {
+  gap: 30px;
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+}
+
+.socialMedia {
+  display: grid;
+  border-radius: 10px;
+  align-items: center;
+  justify-items: center;
+  background-color: var(--Dark-Desaturated-Blue-Card-BG);
+}
+
+#facebook {
+  border-top: 4px solid var(--Facebook);
+}
+
+#twitter {
+  border-top: 4px solid var(--Twitter);
+}
+
+#instagram {
+  border-top: 4px solid #000;
+}
+
+#YouTube {
+  border-top: 4px solid var(--YouTube);
+}
+
+.appIcon {
+  display: flex;
+  margin-block: 20px;
+}
+
+.mentions {
+  margin-left: 8px;
+  color: var(--Desaturated-Blue-text);
+}
+
+h2 {
+  font-size: 52px;
+  color: var(--White);
+}
+
+.followers {
+  font-size: 14px;
+  letter-spacing: 6px;
+  text-transform: uppercase;
+  color: var(--Dark-Grayish-Blue);
+}
+
+.followerCnt {
+  display: flex;
+  margin-block: 20px;
+  align-items: center;
+}
+
+.followerCntToday {
+  margin-left: 4px;
+  color: var(--Lime-Green);
+}
+
+#YouTube .followerCntToday {
+  color: var(--YouTube);
+}
+
+main {
+  background-color: var(--Very-Dark-Blue-BG);
 }
