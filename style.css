@@ -44,8 +44,8 @@ body {
 /* Header */
 
 header {
-  padding: 2rem 10% 0 10%;
   position: relative;
+  padding: 2rem 10% 0 10%;
   background-color: var(--Very-Dark-Blue-TBG);
 }
 
@@ -88,6 +88,12 @@ h1 {
 
 #btn:hover {
   cursor: pointer;
+  filter: brightness(110%);
+}
+
+#btn:hover #innerBtn {
+  cursor: pointer;
+  filter: brightness(120%);
 }
 
 #innerBtn {
@@ -103,7 +109,7 @@ h1 {
   gap: 30px;
   width: 80%;
   display: grid;
-  bottom: -6.6rem;
+  bottom: -6.9rem;
   position: absolute;
   grid-template-columns: repeat(4, 1fr);
 }
@@ -111,10 +117,15 @@ h1 {
 .socialMedia {
   display: grid;
   padding-block: 4px;
-  border-radius: 10px;
-  align-items: center;
+  border-radius: 3px;
   justify-items: center;
   background-color: var(--Dark-Desaturated-Blue-Card-BG);
+}
+
+.socialMedia:hover,
+.socialApp:hover {
+  cursor: pointer;
+  filter: brightness(130%);
 }
 
 #facebook {
@@ -146,6 +157,9 @@ h1 {
 h2 {
   font-size: 58px;
   color: var(--White);
+  @media (max-width: 1440px) {
+    font-size: 50px;
+  }
 }
 
 .followers {
@@ -162,6 +176,8 @@ h2 {
 }
 
 .followerCntToday {
+  font-size: 14px;
+  font-weight: 700;
   margin-left: 4px;
   color: var(--Lime-Green);
 }
@@ -198,8 +214,8 @@ main .socialOverview {
 }
 
 .socialOverview .socialApp {
-  padding: 20px 24px;
-  border-radius: 6px;
+  padding: 22px 24px;
+  border-radius: 5px;
   background-color: var(--Dark-Desaturated-Blue-Card-BG);
 }
 
@@ -207,7 +223,12 @@ main .socialOverview {
   margin-bottom: 1.5rem;
 }
 
-.count,
+.type {
+  font-size: 14px;
+  font-weight: 700;
+  color: var(--Desaturated-Blue-text);
+}
+
 .views-app,
 .count-per {
   display: flex;
@@ -215,14 +236,26 @@ main .socialOverview {
   justify-content: space-between;
 }
 
-.page-view {
+.count {
+  display: flex;
+  align-items: end;
+  justify-content: space-between;
+}
+
+.count-per .followerCntToday {
   font-size: 14px;
   font-weight: 700;
-  color: var(--Desaturated-Blue-text);
+}
+
+.followerCntTodayRed {
+  font-size: 14px;
+  font-weight: 700;
+  margin-left: 4px;
+  color: var(--YouTube);
 }
 
 .count-num {
-  font-size: 28px;
+  font-size: 30px;
   font-weight: 700;
   color: var(--White);
 }
