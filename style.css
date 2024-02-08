@@ -44,7 +44,6 @@ body {
 /* Header */
 
 header {
-  position: relative;
   padding: 2rem 10% 0 10%;
   background-color: var(--Very-Dark-Blue-TBG);
 }
@@ -70,6 +69,8 @@ h1 {
 
 #theme {
   display: flex;
+  height: 2.5rem;
+  align-items: center;
 }
 
 #themeMode {
@@ -106,19 +107,21 @@ h1 {
 /* Social Media containers */
 
 #socialMediaInfo {
-  gap: 30px;
-  width: 80%;
+  gap: 2rem;
+  width: 100%;
   display: grid;
-  bottom: -6.9rem;
-  position: absolute;
+  margin-top: -6.6rem;
+  padding: 0 10% 0 10%;
   grid-template-columns: repeat(4, 1fr);
 }
 
 .socialMedia {
-  display: grid;
-  padding-block: 4px;
+  display: flex;
+  /* max-width: 100%;
+  min-width: 16.5rem; */
   border-radius: 3px;
-  justify-items: center;
+  align-items: center;
+  flex-direction: column;
   background-color: var(--Dark-Desaturated-Blue-Card-BG);
 }
 
@@ -128,20 +131,20 @@ h1 {
   filter: brightness(130%);
 }
 
-#facebook {
-  border-top: 4px solid var(--Facebook);
+.top {
+  height: 4px;
+  width: 100%;
+  border-radius: 3px 3px 0 0;
+  background: var(--Facebook);
 }
-
-#twitter {
-  border-top: 4px solid var(--Twitter);
+#twitter .top {
+  background: var(--Twitter);
 }
-
-#instagram {
-  border-top: 4px solid #000;
+#instagram .top {
+  background: var(--instagram);
 }
-
-#YouTube {
-  border-top: 4px solid var(--YouTube);
+#YouTube .top {
+  background: var(--YouTube);
 }
 
 .appIcon {
@@ -197,13 +200,13 @@ main {
 }
 
 main h2 {
-  font-size: 30px;
-  margin-block: 10rem 22px;
+  font-size: 1.8rem;
+  width: fit-content;
   color: var(--White);
-  @media (max-width: 1440px) {
+  margin-block: 2rem 22px;
+  /* @media (max-width: 1440px) {
     font-size: 26px;
-    margin-top: 9rem;
-  }
+  } */
 }
 
 main .socialOverview {
@@ -214,13 +217,15 @@ main .socialOverview {
 }
 
 .socialOverview .socialApp {
-  padding: 22px 24px;
+  height: 7.5rem;
   border-radius: 5px;
   background-color: var(--Dark-Desaturated-Blue-Card-BG);
 }
 
 .views-app {
-  margin-bottom: 1.5rem;
+  display: flex;
+  margin: 1.5rem 2rem;
+  justify-content: space-between;
 }
 
 .type {
@@ -238,6 +243,7 @@ main .socialOverview {
 
 .count {
   display: flex;
+  margin: 1.7rem;
   align-items: end;
   justify-content: space-between;
 }
