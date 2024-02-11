@@ -37,15 +37,22 @@
   box-sizing: border-box;
 }
 
-body {
+/* Dark theme */
+
+.darkTheme {
   background-color: var(--Very-Dark-Blue-BG);
 }
 
 /* Header */
 
 header {
-  height: 35vh;
+  border-radius: 0 0 22px 22px;
+}
+
+.darkHeader {
+  height: 30vh;
   padding: 4vh 10vw 0 10vw;
+  transition: background-color 0.2s ease-in-out;
   background-color: var(--Very-Dark-Blue-TBG);
   @media (max-width: 1440px) {
     height: 28vh;
@@ -62,16 +69,24 @@ header {
   }
 }
 
-h1 {
-  font-size: 29px;
-  margin-bottom: 4px;
+.darkTheme h1 {
   color: var(--White);
 }
 
-#followers {
+h1 {
+  font-size: 29px;
+  margin-bottom: 4px;
+  color: var(--Very-Dark-Blue);
+}
+
+.follower {
   font-size: 15px;
   font-weight: 700;
   color: var(--Desaturated-Blue-text);
+}
+
+.Grayish-Blue {
+  color: var(--Dark-Grayish-Blue);
 }
 
 hr {
@@ -81,6 +96,8 @@ hr {
 #theme {
   display: flex;
   height: 2.5rem;
+  font-size: 14px;
+  font-weight: 700;
   align-items: center;
   justify-content: space-between;
 }
@@ -101,19 +118,19 @@ hr {
 
 #btn:hover {
   cursor: pointer;
-  filter: brightness(110%);
+  background: linear-gradient(to right, hsl(210, 87%, 64%), hsl(146, 90%, 66%));
 }
 
-#btn:hover #innerBtn {
-  cursor: pointer;
-  filter: brightness(120%);
-}
-
-#innerBtn {
+.dark {
   width: 48%;
   height: 100%;
   border-radius: 100%;
+  transition: all 0.4s ease-in-out;
   background-color: var(--Very-Dark-Blue-TBG);
+}
+
+#btn:hover .dark {
+  filter: brightness(2);
 }
 
 /* Social Media containers */
@@ -127,18 +144,24 @@ hr {
   grid-template-columns: repeat(4, 1fr);
 }
 
-.socialMedia {
+.socialMediaDark {
   display: flex;
   border-radius: 3px;
   align-items: center;
+  color: var(--White);
   flex-direction: column;
   background-color: var(--Dark-Desaturated-Blue-Card-BG);
 }
 
-.socialMedia:hover,
-.socialApp:hover {
+.socialAppDark,
+.socialMediaDark {
+  transition: all 0.2s ease-in-out;
+}
+
+.socialAppDark:hover,
+.socialMediaDark:hover {
   cursor: pointer;
-  filter: brightness(130%);
+  background-color: hsl(228, 25%, 25%);
 }
 
 .top {
@@ -163,18 +186,20 @@ hr {
 }
 
 .mentions {
+  font-size: 13px;
+  font-weight: 700;
   margin-left: 8px;
-  color: var(--Desaturated-Blue-text);
+  color: var(--Dark-Grayish-Blue);
 }
 
 h2 {
-  color: var(--White);
   font-size: max(3vw, 40px);
 }
 
 .followers {
   font-size: 14px;
   letter-spacing: 6px;
+  font-weight: 400;
   text-transform: uppercase;
   color: var(--Dark-Grayish-Blue);
 }
@@ -200,12 +225,16 @@ h2 {
 
 main {
   padding-inline: 10vw;
-  background-color: var(--Very-Dark-Blue-BG);
+}
+
+main {
+  @media (max-width: 1500px) {
+    margin-bottom: 6vh;
+  }
 }
 
 main h2 {
   font-size: 1.8rem;
-  width: fit-content;
   color: var(--White);
   margin-block: 2rem 22px;
 }
@@ -217,7 +246,8 @@ main .socialOverview {
   grid-template-columns: repeat(4, 1fr);
 }
 
-.socialOverview .socialApp {
+.socialAppDark {
+  color: var(--White);
   height: 7.5rem;
   border-radius: 5px;
   background-color: var(--Dark-Desaturated-Blue-Card-BG);
@@ -235,17 +265,15 @@ main .socialOverview {
   color: var(--Desaturated-Blue-text);
 }
 
-.views-app,
 .count-per {
   display: flex;
   align-items: center;
-  justify-content: space-between;
 }
 
 .count {
   display: flex;
   margin: 0 1.75rem;
-  align-items: flex-end;
+  align-items: baseline;
   justify-content: space-between;
 }
 
@@ -263,7 +291,6 @@ main .socialOverview {
 
 .count-num {
   font-weight: 700;
-  color: var(--White);
   font-size: max(1.7vw, 28px);
 }
 
@@ -273,9 +300,6 @@ main .socialOverview {
     grid-template-rows: 1fr 1fr;
     grid-template-columns: 1fr 1fr;
   }
-  main {
-    margin-bottom: 6vh;
-  }
   main .socialOverview {
     grid-template-columns: 1fr 1fr;
   }
@@ -284,7 +308,6 @@ main .socialOverview {
 @media (max-width: 510px) {
   header {
     height: 32vh;
-    border-radius: 0 0 22px 22px;
   }
   h1 {
     font-size: 22px;
@@ -302,10 +325,32 @@ main .socialOverview {
     font-weight: 700;
   }
   #btn {
-    width: 44px;
+    width: 45px;
     height: 24px;
   }
   main .socialOverview {
     grid-template-columns: 1fr;
   }
+}
+
+/* Light theme */
+
+.whiteHeader {
+  background-color: var(--Light-Grayish-Blue);
+}
+
+.socialLight {
+  color: var(--Very-Dark-Blue);
+  background-color: var(--Very-Pale-Blue);
+}
+
+.socialAppLight:hover,
+.socialLight:hover {
+  filter: none;
+  background-color: hsl(227, 47%, 91%);
+}
+
+.active {
+  transform: translateX(21px);
+  background-color: var(--White);
 }
